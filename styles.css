@@ -4,6 +4,7 @@
     list-style: none;
     font-family: sans-serif;
     box-sizing: border-box;
+    /*border: 1px solid #FB3B64;*/
 }
 body{
     margin: 0;
@@ -139,7 +140,7 @@ header nav ul li a:hover {
     color: #000000;
     margin-bottom: 20px;
 }
-#rectangle{
+#why-as{
     width: 100%;
     padding: 30px;
     background: #F7F7F7;
@@ -154,7 +155,7 @@ header nav ul li a:hover {
 /*.rectangle1-1{
     text-align: center;
 }*/
-.rectangle1 .rectangle1-1 .rhombus{
+.rectangle1 .rhombus{
     position: relative;
     height: 90px;
     width: 90px;
@@ -171,7 +172,7 @@ header nav ul li a:hover {
     text-align: center;
     height: max-content;
 }
-.rectangle1-1 h2{
+.rectangle1 h2{
     position: relative;
     font-family: 'Raleway';
     font-style: normal;
@@ -180,7 +181,7 @@ header nav ul li a:hover {
     line-height: 35px;
     color: #000000;
 }
-.rectangle1-1 p{
+.rectangle1 p{
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -193,11 +194,11 @@ header nav ul li a:hover {
     border: 1px solid #E8E9ED;
     border-radius: 5px;
     padding: 20px;
+    padding-bottom: 40px;
     margin-bottom: 30px;
+    display:block;
+    align-items: center;
     /*display:inline-block;*/
-}
-.rectangle2-1{
-    display:inline
 }
 .circle{
     position: relative;
@@ -212,13 +213,13 @@ header nav ul li a:hover {
 #img2{
     position: relative;
     width: 190px;
-    left: 65px;
-    bottom: 140px;
+    left: 5px;
+    top: 10px;
     text-align: center;
     height: max-content;
     /*display:inline-block;*/
 }
-.rectangle2-1 h2{
+.rectangle2 h2{
     position: relative;
     font-family: 'Raleway';
     font-style: normal;
@@ -226,9 +227,9 @@ header nav ul li a:hover {
     font-size: 30px;
     line-height: 35px;
     color: #000000;
-    bottom: 70px;
+    top:25px;
 }
-.rectangle2-1 p{
+.rectangle2 p{
     position:relative;  
     float: inline;
     font-family: 'Open Sans';
@@ -237,13 +238,13 @@ header nav ul li a:hover {
     font-size: 14px;
     line-height: 21px;
     color: #000000;
-    bottom: 60px;
+    top:40px;
+    
 }
 .rectangle3{
     background: #FFFFFF;
     border: 1px solid #E8E9ED;
     border-radius: 5px;
-    padding: 20px;
 }
 .rectangle3-1 h2{
     position: relative;
@@ -252,6 +253,7 @@ header nav ul li a:hover {
     font-weight: 400;
     font-size: 30px;
     line-height: 35px;
+    padding: 20px;
     color: #000000;
 }
 .rectangle3-1 p{
@@ -260,9 +262,11 @@ header nav ul li a:hover {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
+    padding: 20px;
     color: #000000;
 }
 .rectangle4{
+    text-align: center;
     background: #55DFB4;
     border: 1px solid #E8E9ED;
     border-radius: 5px;
@@ -512,6 +516,7 @@ header nav ul li a:hover {
 }
 .emailcont {
     position: relative;
+    width: 200px;
     left: 30px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -522,6 +527,7 @@ header nav ul li a:hover {
 }
 .numbercont{
     position: relative;
+    width: 200px;
     left: 30px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -672,25 +678,22 @@ header nav input {
     background-size: 1735px 594px;
 }
 
-#column{
+#benefits{
     display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+}
+#why-as{
     position: relative;
-    left: 27%;
-}
-.col1{
-    padding-right: 12%;
-}
-.col2{
-    padding-right: 12%;
-}
-#rectangle{
-    position: relative;
-    height: 1300px;
+    min-height: 1300px;
     padding: 100px 250px;
     background: #F7F7F7;
 }
 .rectangle1{
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50% 50%;
     position: relative;
     width: 100%;
     height: 370px;
@@ -698,13 +701,7 @@ header nav input {
     border: 1px solid #E8E9ED;
     border-radius: 5px;
 }
-.rectangle1-1{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1;
-    grid-column-gap: 10px;
-}
-.rectangle1-1 h2{
+.rectangle1 h2{
     display: grid;
     grid-column: 1;
     grid-row: 1;
@@ -717,11 +714,12 @@ header nav input {
     line-height: 42px;
     color: #000000;
 }
-.rectangle1-1 p{
+.rectangle1 p{
     display: grid;
     grid-column: 1;
     grid-row: 1;
-    width: 400px;
+    width: 99%;
+    min-width: 245px;
     align-content: space-around;
     font-family: 'Open Sans';
     font-style: normal;
@@ -733,30 +731,29 @@ header nav input {
 .line1{
     display: grid;
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
+    position: relative;
     width: 327.64px;
     height: 0px;
-    left: 0%;
-    top: 33;
+    top: 280px;
     border: 4px solid #FB3B64;
     background: #FB3B64;
 }
-#img1{    
+#img1{
     display: grid;
     grid-column: 2;
     grid-row: 1;
     width: 386px;
     top: 60px;
-    left: 60px;
+    left: -50px;
 }
-.rectangle1 .rectangle1-1 .rhombus{
+.rectangle1 .rhombus{
     display: grid;
-    grid-column:2;
+    grid-column: 2;
     grid-row: 1;
     width: 180px;
     height: 180px;
     top: 20px;
-    left: 50%;
     background: #FB3B64;
     border-radius: 41px;
     transform: rotate(-45deg);
@@ -769,52 +766,47 @@ header nav input {
     margin-bottom: 30px;
     /*display:inline-block;*/
 }
-.rectangle2-1{
+.rectangle2{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 1;
-    grid-column-gap: 50px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 370px;
 }
 .circle{
     position: relative;
+    display: grid;
     grid-column: 1;
     grid-row: 1;
     height: 320px;
     width: 320px;
-    left: 20px;
+    left: 0px;
     border-radius: 100%;
     background: #08A6E4;
     /*display:inline-block;*/
     
 }
 #img2{
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
     width: 426px;
     left: 20px;
     top: 20px;
     /*display:inline-block;*/
 }
-.rectangle2-1 h2{ 
+.rectangle2 h2{
+    position: relative;
     display: grid;
     grid-column: 2;
     grid-row: 1;
-    top: 40px;
+    top: -60px;
     width: 260px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 35px;
-    color: #000000; 
 }
-.rectangle2-1 p{
+.rectangle2 p{
+    position: relative;
     display: grid;
     grid-column: 2;
     grid-row: 1;
-    top: 190px;
-    width: 400px;
+    min-width: 260px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -823,25 +815,36 @@ header nav input {
     color: #000000;
 }
 .line2{
+    position: relative;
     display: grid;
     grid-column: 2;
-    grid-row: 2;
-    width: 327.64px;
-    height: 0px;
-    left: 30px;
+    grid-row: 1;
+    max-width: 327.64px;
+    min-width: 100px;
+    top: 100px;
     border: 4px solid #08A6E4;
     background: #08A6E4;
 }
 .rectangle3{
-    display: inline-block;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 370px;
+    padding: 0;
+    padding-left: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E8E9ED;
+    border-radius: 5px;
+
+    /*display: inline-block;
     position: relative;
     width: 55%;
     height: 370px;
-    bottom: 80px;
+    bottom: 80px;*/
 }
 .rectangle3-1 h2{
     position: relative;
-    width: 348px;
     top:40px;
 }
 .rectangle3-1 p{
@@ -850,21 +853,17 @@ header nav input {
 }
 .rectangle3-1 .line3{
     position: relative;
-    width: 330px;
-    top:120px;
+    min-width: 100px;
+    max-width: 320px;
+    top:110px;
     border: 4px solid #55DFB4;
 }
 .rectangle4{
-    display: inline-block;
     position: relative;
-    width: 36%;
-    height: 370px;
-    margin-left: 8.5%;
 }
 .rectangle4 img{
     position: relative;
     top:100px;
-    left: 20%;
 }
 #pricing{
     display: inline-block;
@@ -876,14 +875,13 @@ header nav input {
     position: relative;
     text-align: center;
     display: inline-block;
-    width: 372px;
+    max-width: 372px;
     height: 461px;
-    bottom: 150px;
     background: #FFFFFF;
     border: 1px solid #FB3B64;
     border-radius: 18px;
+    top:10px;
     padding: 10px;
-    top: 150px;
 
 }
 .pricing-basic-box1{
@@ -912,13 +910,17 @@ header nav input {
     margin-top: 60px;
     line-height: 35px;
 }
+.pricing-basic-box .begin-box1{
+    position: relative;
+    top:10px;
+}
 
 .pricing-professional-box{
     position: relative;
     padding: 10px;
     text-align: center;
     display: inline-block;
-    width: 372px;
+    max-width: 372px;
     height: 461px;
     background: #FFFFFF;
     border: 1px solid #07ACE6;
@@ -928,53 +930,70 @@ header nav input {
 }
 .pricing-professional-box1{
     position: relative;
+    display:flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-template-columns: 100%;
+}
+.pricing-professional-box1 h2{
+    position: relative;
+    left:100px;
+}
+.pricing-professional-box1 p{
+    right: 20px;
+}
+.pricing-professional-box1 h5{
+    right: 122px;
+    margin-bottom: 15px;
+}
+.pricing-professional-box1 ul{
+    line-height: 37px;
     text-align: center;
 }
+
 .pricing-professional-box .begin2{
-    top:180px;
+    bottom: 5px;
 }
 .pricing-premium-box{
+    position: relative;
+    padding: 10px;
     display: inline-block;
     text-align: center;
-    width: 372px;
+    max-width: 372px;
     height: 461px;
     background: #FFFFFF;
     border: 1px solid #55DFB4;
     border-radius: 18px;
 }
 .pricing-premium-box1{
-    grid-template-columns: none;
-    text-align: center;
-}
-.pricing-premium-box h2{
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    color: #13253B;
-}
-.pricing-premium-box p{
     position: relative;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 46px;
-    line-height: 64px;
-    color: #55DFB4;
+    display:flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-template-columns: 100%;
 }
-.pricing-premium-box h5{
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #13253B;
+.pricing-premium-box1 h2{
+    position: relative;
+    left:100px;
+}
+.pricing-premium-box1 p{
+    right: 20px;
+
+}
+.pricing-premium-box1 h5{
+    right: 132px;
+    margin-bottom: 15px;
+}
+.pricing-premium-box1 ul{
+    line-height: 37px;
+    text-align: center;
 }
 .pricing-premium-box button{
     position: relative;
     padding: 10px 40px;
-    top:20px;
+    top:15px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -984,6 +1003,7 @@ header nav input {
     color: #FFFFFF;
     background: #55DFB4;
     border-radius: 23px;
+    
 }
 .contact{
     display: grid;
