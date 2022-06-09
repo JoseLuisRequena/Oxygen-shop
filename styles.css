@@ -345,7 +345,6 @@ header nav ul li a:hover {
     background: #FB3B64;
     border-radius: 23px;
 }
-
 .pricing-professional-box{
     background: #FFFFFF;
     border: 1px solid #07ACE6;
@@ -417,7 +416,6 @@ header nav ul li a:hover {
     background: #07ACE6;
     border-radius: 23px;
 }
-
 .pricing-premium-box{
     width: 100%;
     background: #FFFFFF;
@@ -677,7 +675,6 @@ header nav input {
     background-repeat: no-repeat;
     background-size: 1735px 594px;
 }
-
 #benefits{
     display: flex;
     width: 100%;
@@ -784,14 +781,11 @@ header nav input {
     left: 0px;
     border-radius: 100%;
     background: #08A6E4;
-    /*display:inline-block;*/
-    
 }
 #img2{
     width: 426px;
     left: 20px;
     top: 20px;
-    /*display:inline-block;*/
 }
 .rectangle2 h2{
     position: relative;
@@ -836,12 +830,6 @@ header nav input {
     background: #FFFFFF;
     border: 1px solid #E8E9ED;
     border-radius: 5px;
-
-    /*display: inline-block;
-    position: relative;
-    width: 55%;
-    height: 370px;
-    bottom: 80px;*/
 }
 .rectangle3-1 h2{
     position: relative;
@@ -1003,12 +991,10 @@ header nav input {
     color: #FFFFFF;
     background: #55DFB4;
     border-radius: 23px;
-    
 }
 .contact{
     display: grid;
     grid-template-columns: 50% 50%;
-
 }
 #contact-question{
     margin-left: 45%;
