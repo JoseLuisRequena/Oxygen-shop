@@ -5,13 +5,13 @@
     font-family: sans-serif;
     box-sizing: border-box;
     transition-duration: 1s;
-    border: 1px solid #FB3B64;
+    /*border: 1px solid #FB3B64;*/
 }
 body{
     margin: 0;
     min-width: 320px;
     background:#ffffff;
-}
+}	
 @media screen and ( min-width:320px ) {
     
 header{
@@ -84,6 +84,43 @@ a:link {
 header nav ul li a:hover {
     text-decoration-color: #000000;
     color: #000000;
+}
+#go_up{
+    position: fixed;
+    z-index: 100;
+    right: 25px;
+    bottom: 25px;
+    background-color: #08a6e4bb;
+    width: 65px;
+    height: 65px;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+#go_up:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.indicador_contenedor{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 7px;
+    z-index: 100;
+}
+.indicador_scroll{
+    height: 100%;
+    width: 0;
+    background-color: #08A6E4;
+}
+.ocultar{
+    opacity: 0;
+    visibility: hidden;
+}
+.mostrar{
+    opacity: 1;
+    visibility: visible;
 }
 .inicio{
     width: 100%;
@@ -949,9 +986,9 @@ header nav input {
     margin-top: 60px;
     line-height: 35px;
 }
-.pricing-basic-box .begin-box1{
+.pricing-basic-box .begin1{
     position: relative;
-    top:10px;
+    top:25px;
 }
 
 .pricing-professional-box{
@@ -997,7 +1034,7 @@ header nav input {
 }
 
 .pricing-professional-box .begin2{
-    top:20px;
+    top:35px;
 }
 .pricing-premium-box{
     position: relative;
@@ -1039,10 +1076,10 @@ header nav input {
     line-height: 37px;
     text-align: center;
 }
-.pricing-premium-box button{
+.pricing-premium-box .begin3{
     position: relative;
     padding: 10px 40px;
-    top:20px;
+    top:35px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
