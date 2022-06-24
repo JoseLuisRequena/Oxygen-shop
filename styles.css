@@ -986,9 +986,9 @@ header nav input {
     margin-top: 60px;
     line-height: 35px;
 }
-.pricing-basic-box .begin-box1{
+.pricing-basic-box .begin1{
     position: relative;
-    top:10px;
+    top:25px;
 }
 
 .pricing-professional-box{
@@ -1034,7 +1034,7 @@ header nav input {
 }
 
 .pricing-professional-box .begin2{
-    top:20px;
+    top:35px;
 }
 .pricing-premium-box{
     position: relative;
@@ -1076,10 +1076,10 @@ header nav input {
     line-height: 37px;
     text-align: center;
 }
-.pricing-premium-box button{
+.pricing-premium-box .begin3{
     position: relative;
     padding: 10px 40px;
-    top:20px;
+    top:35px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
