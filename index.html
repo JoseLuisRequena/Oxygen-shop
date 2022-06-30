@@ -87,11 +87,15 @@
     
     <div id="pricing">
         <div class="pricingtext">Pricing</div>
-        
+        <select class="pricing-currency">
+            <option class="coin" value="gbp">GBP - ₤</option>
+            <option class="coin" value="eur">EUR - €</option>
+            <option class="coin" value="usd" selected>USD - $</option>
+          </select>
         <div class="pricing-basic-box">
             <div class="pricing-basic-box1">
                 <h2>Basic</h2>
-                <p>$0</p>
+                <p id="pricing-basic-p"></p>
             
                 <ul>
                     <li id="basic1"><img src="imagenes/basic1.png"/></li>
@@ -108,7 +112,7 @@
         <div class="pricing-professional-box">
             <div class="pricing-professional-box1">
                 <h2>Professional</h2>
-                <p>$25</p>
+                <p id="pricing-professional-p"></p>
                 <h5>Limited offer</h5>
                 <ul>
                     <li id="professional1"><img src="imagenes/Professional1.png"/></li>
@@ -124,7 +128,7 @@
         <div class="pricing-premium-box">
             <div class="pricing-premium-box1">
                 <h2>Premium</h2>
-                <p>$60</p>
+                <p id="pricing-premium-p"></p>
                 <h5>Limited offer</h5>
                 <ul>
                     <li id="premium1"><img src="imagenes/Premium1.png"/></li>
@@ -162,8 +166,26 @@
             </label>
         </form>
     </div>
+    <div id="popup">
+        <dialog id="modal" class="form">
+            <h2>Subscribe to our newsletter</h2>
+            <form method="dialog">
+                <label>
+                    <input class="name_modal" type="text" placeholder="NAME"><br>
+                </label>
+                <label>
+                    <input class="email_modal" type="email" placeholder="EMAIL"><br>
+                </label>
+                <label>
+                    <input class="checkbox_modal" type="checkbox">
+                    <p>I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive).</p> <br>
+                </label>
+                <button id="close_modal" type="submit">X</button>
+                <button id="send_modal" class="submit_modal" type="submit">Enviar</button>
 
-    
+            </form>
+        </dialog>
+    </div>
     <footer>
         <h4>OXYGEN Shop<h4>
         <p>© 2022 OXYGEN, All Rights Reserved</p>
