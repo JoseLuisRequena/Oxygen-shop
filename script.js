@@ -50,7 +50,7 @@ const clientNameInput = document.querySelector('#clientname');
 const clientEmailInput= document.querySelector('#clientemail');
 const checkbox= document.querySelector('#conditions');
 const clientForm = document.querySelector('#form')
-const submit = document.querySelector('.submit_modal')
+const submit = document.querySelector('#submit')
 const regexEmail= /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
 clientForm.addEventListener('submit', e =>{
@@ -90,7 +90,7 @@ clientForm.addEventListener('submit', e =>{
         function colorButtonSend () {
             submit.classList.remove('submit_send');
         }
-        setTimeout(colorButtonSend, 700);
+        setTimeout(colorButtonSend, 1000);
     }
 });
 
@@ -143,6 +143,7 @@ currency.addEventListener('change', ()=>{
     let dataCoin = () => { fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
   .then((response) => response.json())
   .then((data) => {
+
     const usd = data.eur.usd;
     const gbp = data.eur.gbp;
 
@@ -173,12 +174,72 @@ currency.addEventListener('change', ()=>{
     document.querySelector('#pricing-basic-p').innerHTML = conversionBasic;
     document.querySelector('#pricing-professional-p').innerHTML = conversionProf;
     document.querySelector('#pricing-premium-p').innerHTML = conversionPremiun;
-    
     });
-   
     };
 
     dataCoin();
-    
-    
 }) 
+
+const btnPrev = document.createElement("button");
+btnPrev.innerHTML = "";
+document.querySelector('.slider_conteiner').appendChild(btnPrev);
+const btnNext = document.createElement("button");
+btnNext.innerHTML = "";
+document.querySelector('.slider_conteiner').appendChild(btnNext);
+
+let arrayPhotos = [...document.querySelectorAll('.img_slider')];
+let value;
+let n = 0;//contador utilizado como index del array arrayPhotos
+
+btnNext.addEventListener('click', ()=>{
+    changePosition(1);
+    n += 1;
+});
+
+btnPrev.addEventListener('click', ()=>{
+    changePosition(-1)
+    n -=1;
+});
+
+function changePosition(change){
+    
+    const currentElemnt = Number(document.querySelector('.img_slider--show').dataset.id);
+    value = currentElemnt;
+    value += change;
+
+    if (value === 0 || value === arrayPhotos.length+1){
+        value = value === 0 ? arrayPhotos.length : 1;
+    }
+
+    arrayPhotos[currentElemnt-1].classList.toggle('img_slider--show');
+    arrayPhotos[value-1].classList.toggle('img_slider--show');
+}
+
+setInterval(function(){ 
+    
+    const imgActual = document.querySelector('.img_slider--show');
+    
+    if (n >= arrayPhotos.length-1){
+        n = 0 ;
+        arrayPhotos[n].classList.toggle('img_slider--show');
+        arrayPhotos[arrayPhotos.length-1].classList.toggle('img_slider--show');
+    }else if(n <= -2){
+        //revisar la expresion matematica no se consideran "n" menores que arrayPhotos.length
+        n = arrayPhotos.length + n ;
+    }else{
+        n++   
+        imgActual.classList.toggle('img_slider--show');
+        arrayPhotos[n].classList.toggle('img_slider--show');
+    };
+
+    console.log(arrayPhotos[n]);
+    
+}, 3500);
+
+/*class Slider {
+    constructor(slider){
+        
+    }
+}
+const initSlider = new Slider('#slider')*/
+

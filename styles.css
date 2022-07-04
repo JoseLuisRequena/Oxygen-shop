@@ -532,6 +532,57 @@ header nav ul li a:hover {
     background: #55DFB4;
     border-radius: 23px;
 }
+.conteiner{
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#slider{
+    background-color: #F7F7F7;
+}
+.slider_conteiner{
+    display: grid;
+    max-height: 700px;
+    max-width: 1000px;
+    align-items: center;
+    grid-template-columns: 50px 1fr 50px;
+}
+.slider_conteiner button {
+    z-index: 100;
+    height: 50px;
+    pointer-events: unset;
+}
+.slider_conteiner button:nth-of-type(1) {
+    background-image: url('imagenes/anterior.jpg');
+    background-repeat: no-repeat;
+    background-size: 50px 46px;
+    border-style: none;
+}
+.slider_conteiner button:nth-of-type(2) {
+    background-image: url('imagenes/siguiente.png');
+    background-repeat: no-repeat;
+    background-size: 50px 46px;
+    border-style: none;
+}
+.img_slider{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    width: 100%;
+    max-height: 500px;
+    max-width: 1000px;
+    background-color: #000000;
+    pointer-events: none;
+    object-fit: contain;
+    transition: opacity 1.5;
+}
+.img_slider--show{
+    opacity: 1;
+    pointer-events: unset;
+}
 .contact{
     text-align: left;
     padding: 20px;
