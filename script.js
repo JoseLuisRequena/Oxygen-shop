@@ -232,9 +232,32 @@ setInterval(function(){
         arrayPhotos[n].classList.toggle('img_slider--show');
     };
 
-    console.log(arrayPhotos[n]);
+    //console.log(arrayPhotos[n]);
     
 }, 3500);
+
+let btnsImg = document.createElement('ul');
+document.querySelector('.slider_conteiner').appendChild(btnsImg);
+btnsImg.classList.toggle('ul_img_slider');
+
+for (i=1; i < arrayPhotos.length + 1 ; i++){
+const btnImg = document.createElement('li') 
+
+btnsImg.appendChild(btnImg);
+btnImg.classList.toggle('li_img_slider');
+btnImg.dataset.index = [i];
+
+}
+
+let botones = document.querySelectorAll('.li_img_slider');
+
+botones.forEach(botones => {botones.addEventListener('click', ()=>{
+    n = botones.getAttribute('data-index');
+    const imgActual = document.querySelector('.img_slider--show');
+    imgActual.classList.toggle('img_slider--show');
+    arrayPhotos[n-1].classList.toggle('img_slider--show');
+    n -=1;
+})})
 
 /*class Slider {
     constructor(slider){
