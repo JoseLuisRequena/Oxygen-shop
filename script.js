@@ -180,84 +180,90 @@ currency.addEventListener('change', ()=>{
     dataCoin();
 }) 
 
-const btnPrev = document.createElement("button");
-btnPrev.innerHTML = "";
-document.querySelector('.slider_conteiner').appendChild(btnPrev);
-const btnNext = document.createElement("button");
-btnNext.innerHTML = "";
-document.querySelector('.slider_conteiner').appendChild(btnNext);
+function slider(){
 
-let arrayPhotos = [...document.querySelectorAll('.img_slider')];
-let value;
-let n = 0;//contador utilizado como index del array arrayPhotos
-
-btnNext.addEventListener('click', ()=>{
-    changePosition(1);
-    n += 1;
-});
-
-btnPrev.addEventListener('click', ()=>{
-    changePosition(-1)
-    n -=1;
-});
-
-function changePosition(change){
+    const btnPrev = document.createElement("button");
+    btnPrev.innerHTML = "";
+    document.querySelector('.slider_conteiner').appendChild(btnPrev);
     
-    const currentElemnt = Number(document.querySelector('.img_slider--show').dataset.id);
-    value = currentElemnt;
-    value += change;
+    const btnNext = document.createElement("button");
+    btnNext.innerHTML = "";
+    document.querySelector('.slider_conteiner').appendChild(btnNext);
 
-    if (value === 0 || value === arrayPhotos.length+1){
-        value = value === 0 ? arrayPhotos.length : 1;
+    let arrayPhotos = [...document.querySelectorAll('.img_slider')];
+    let value;
+    let contador = 0;//contador utilizado como index del array arrayPhotos
+
+    btnNext.addEventListener('click', ()=>{
+        changePosition(1);
+        contador += 1;
+    });
+
+    btnPrev.addEventListener('click', ()=>{
+        changePosition(-1)
+        contador -=1;
+    });
+
+    function changePosition(change){
+
+        const currentElemnt = Number(document.querySelector('.img_slider--show').dataset.id);
+        value = currentElemnt;
+        value += change;
+
+        if (value === 0 || value === arrayPhotos.length+1){
+            value = value === 0 ? arrayPhotos.length : 1;
+        }
+
+        arrayPhotos[currentElemnt-1].classList.toggle('img_slider--show');
+        arrayPhotos[value-1].classList.toggle('img_slider--show');
     }
 
-    arrayPhotos[currentElemnt-1].classList.toggle('img_slider--show');
-    arrayPhotos[value-1].classList.toggle('img_slider--show');
-}
+    setInterval(function(){ 
 
-setInterval(function(){ 
-    
-    const imgActual = document.querySelector('.img_slider--show');
-    
-    if (n >= arrayPhotos.length-1){
-        n = 0 ;
-        arrayPhotos[n].classList.toggle('img_slider--show');
-        arrayPhotos[arrayPhotos.length-1].classList.toggle('img_slider--show');
-    }else if(n <= -2){
-        //revisar la expresion matematica no se consideran "n" menores que arrayPhotos.length
-        n = arrayPhotos.length + n ;
-    }else{
-        n++   
+        const imgActual = document.querySelector('.img_slider--show');
+
+        if (contador >= arrayPhotos.length-1){
+            contador = 0 ;
+            arrayPhotos[contador].classList.toggle('img_slider--show');
+            arrayPhotos[arrayPhotos.length-1].classList.toggle('img_slider--show');
+        }else if(contador <= -2){
+            //revisar la expresion matematica no se consideran "contador" menores que arrayPhotos.length
+            contador = arrayPhotos.length + contador ;
+        }else{
+            contador++   
+            imgActual.classList.toggle('img_slider--show');
+            arrayPhotos[contador].classList.toggle('img_slider--show');
+        };
+
+        //console.log(arrayPhotos[contador]);
+
+    }, 3500);
+
+    let btnsImg = document.createElement('ul');
+    document.querySelector('.slider_conteiner').appendChild(btnsImg);
+    btnsImg.classList.toggle('ul_img_slider');
+
+    for (i=1; i < arrayPhotos.length + 1 ; i++){
+
+        const btnImg = document.createElement('li') 
+        btnsImg.appendChild(btnImg);
+        btnImg.classList.toggle('li_img_slider');
+        btnImg.dataset.index = [i];
+    }
+
+    let botones = document.querySelectorAll('.li_img_slider');
+
+    botones.forEach(botones => {botones.addEventListener('click', ()=>{
+        contador = botones.getAttribute('data-index');
+        const imgActual = document.querySelector('.img_slider--show');
         imgActual.classList.toggle('img_slider--show');
-        arrayPhotos[n].classList.toggle('img_slider--show');
-    };
-
-    //console.log(arrayPhotos[n]);
-    
-}, 3500);
-
-let btnsImg = document.createElement('ul');
-document.querySelector('.slider_conteiner').appendChild(btnsImg);
-btnsImg.classList.toggle('ul_img_slider');
-
-for (i=1; i < arrayPhotos.length + 1 ; i++){
-const btnImg = document.createElement('li') 
-
-btnsImg.appendChild(btnImg);
-btnImg.classList.toggle('li_img_slider');
-btnImg.dataset.index = [i];
-
+        arrayPhotos[contador-1].classList.toggle('img_slider--show');
+        contador -=1;
+    })})
 }
 
-let botones = document.querySelectorAll('.li_img_slider');
+slider()
 
-botones.forEach(botones => {botones.addEventListener('click', ()=>{
-    n = botones.getAttribute('data-index');
-    const imgActual = document.querySelector('.img_slider--show');
-    imgActual.classList.toggle('img_slider--show');
-    arrayPhotos[n-1].classList.toggle('img_slider--show');
-    n -=1;
-})})
 
 /*class Slider {
     constructor(slider){
