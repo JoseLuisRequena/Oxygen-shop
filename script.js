@@ -42,6 +42,11 @@ const enviarAJson = data => {
     .then((json) =>{
         console.log('form enviado')
         console.log(json)
+        submit.classList.add('submit_send');
+        function colorButtonSend () {
+            submit.classList.remove('submit_send');
+        }
+        setTimeout(colorButtonSend, 1000);
     });
 };
 
@@ -86,11 +91,6 @@ clientForm.addEventListener('submit', e =>{
         clientNameInput.value = '';
         clientEmailInput.value = '';
         checkbox.checked = false;
-        submit.classList.add('submit_send');
-        function colorButtonSend () {
-            submit.classList.remove('submit_send');
-        }
-        setTimeout(colorButtonSend, 1000);
     }
 });
 
@@ -104,12 +104,22 @@ const nameModal = document.querySelector('.name_modal');
 function open(){
     modal.showModal()
 }
-setTimeout(open, 1000);
+setTimeout(open, 5000);
 
 closeModal.addEventListener('click', ()=>{
     modal.close();
-    console.log('se cerro modal')
+    //console.log('se cerro modal con boton')
 })
+
+document.addEventListener("keydown", e => {
+    if(e.key === 'Escape') modal.close();
+    console.log('se cerro modal con escape');
+})
+
+modal.addEventListener('click', e => {
+    if(e.target === modal) modal.close();
+    //console.log('se cerro modal pichando fuera')
+});
 
 openModal.addEventListener('click', ()=>{
     if(!regexEmail.test(emailModal.value)){
