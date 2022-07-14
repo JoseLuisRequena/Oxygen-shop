@@ -95,8 +95,8 @@ clientForm.addEventListener('submit', e =>{
 });
 
 //Modal
-const modal = document.querySelector('#modal');
-const closeModal = document.querySelector('#close_modal');
+const modalId = document.querySelector('#modal');
+const Modal = document.querySelector('#close_modal');
 const openModal = document.querySelector('#send_modal');
 const emailModal = document.querySelector('.email_modal');
 const nameModal = document.querySelector('.name_modal');
@@ -104,43 +104,31 @@ const nameModal = document.querySelector('.name_modal');
 let stateModal = false;
 
 function open(){
-    modal.showModal()
+    modalId.showModal()
     stateModal = true;
 }
 setTimeout(open, 5000);
 
-closeModal.addEventListener('click', event => {
-    cerrar(event, 'click');
+Modal.addEventListener('click', event => {
+    CloseModal(event, 'click');
 })
 document.addEventListener("keydown", event => {
-    cerrar(event, 'escape');
+    CloseModal(event, 'escape');
 })
 
-modal.addEventListener('click', event => {
-    cerrar(event, 'modal');
+modalId.addEventListener('click', event => {
+    CloseModal(event, 'modalId');
 });
 
-
-
-function cerrar(event, option){
+function CloseModal(event, option){
     if(stateModal){
-        if (option == 'escape'){
-            if(event.key === 'Escape') 
-            modal.close();
-            stateModal = false;
-            //console.log('se cerro modal con escape');
-        }else if(option == 'click'){
-            modal.close();
-            stateModal = false;
-            //console.log('se cerro modal pichando fuera')
-        }else if(option == 'modal'){
-            if(event.target === modal){
-            modal.close();
-            stateModal = false;
-            }
+        if ((option == 'click') || 
+        (option == 'escape' && event.key === 'Escape') || 
+        (option == 'modalId' && event.target === modalId)){
+        modalId.close();
+        stateModal = false;
         }
     }
-
 }
 
 openModal.addEventListener('click', ()=>{
