@@ -335,7 +335,14 @@ header nav ul li a:hover {
     float: right;
     position: relative;
     bottom:40px;
+    padding: 2px 3px;
     border-radius: 5px;
+    cursor: pointer;
+    border-color: var(--shadow-secundary);
+    background: var(--shadow-secundary);    
+}
+.pricing-currency{
+    outline: none;
 }
 .pricingtext{
     font-family: 'Raleway';
@@ -381,7 +388,7 @@ header nav ul li a:hover {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
-    font-size: 46px;
+    font-size: 35px;
     line-height: 64px;
     color: var(--secundary);
 }
@@ -438,7 +445,7 @@ header nav ul li a:hover {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
-    font-size: 46px;
+    font-size: 35px;
     line-height: 64px;
     color: var(--shadow-secundary);
 }
@@ -511,7 +518,7 @@ header nav ul li a:hover {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
-    font-size: 46px;
+    font-size: 35px;
     line-height: 64px;
     color: var(--tertiary);
 }
@@ -704,6 +711,9 @@ header nav ul li a:hover {
     border-right: none;
     border-bottom-color: var(--grey-secundary)
 }
+#clientname{
+    outline: none;
+}
 #clientemail{
     position: relative;
     min-width: 300px;
@@ -723,6 +733,9 @@ header nav ul li a:hover {
 }
 ::placeholder{
     color: var(--primary);
+}
+#clientemail{
+    outline: none;
 }
 .input--invalid{
     border-bottom: 2px solid red !important;
@@ -1175,6 +1188,7 @@ header nav input {
 }
 .pricing-professional-box1 p{
     right: 20px;
+    font-size: 46px;
 }
 .pricing-professional-box1 h5{
     right: 122px;
@@ -1218,7 +1232,7 @@ header nav input {
 }
 .pricing-premium-box1 p{
     right: 20px;
-
+    font-size: 46px;
 }
 .pricing-premium-box1 h5{
     right: 132px;
@@ -1247,7 +1261,7 @@ header nav input {
     grid-template-columns: 50% 50%;
 }
 #contact-question{
-    margin-left: 45%;
+    margin-left: 40%;
 }
 #modal{
     left: 30%;
