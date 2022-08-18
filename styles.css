@@ -806,6 +806,10 @@ header nav ul li a:hover {
     background-color: #e4d508a7;
     font-family: 'Open Sans';
 }
+#modal input{
+    outline: none;
+    margin: 5px 10px 5px 0;
+}
 #close_modal{
     position:absolute;
     top: 15px;
