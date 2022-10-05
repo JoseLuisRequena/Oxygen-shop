@@ -800,10 +800,15 @@ header nav ul li a:hover {
     position: fixed;
 }
 #modal{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     padding: 30px;
     z-index: 100;
     max-width: 500px;
-    background-color: #e4d508a7;
+    background-image: linear-gradient( to bottom right, #375da5, #33c2d4);
+    border-radius: 15px;
+    border: none;
     font-family: 'Open Sans';
 }
 #modal input{
@@ -813,20 +818,37 @@ header nav ul li a:hover {
     font-size: 16px;
 }
 #close_modal{
+    text-align: center;
     position:absolute;
     top: 15px;
     right: 15px;
     padding: 5px 10px;
-    background-color: red;
+    border: 1px solid rgba(255, 255, 255, .5);
+    color: var(--white);
     border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+#close_modal:hover{
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
 }
 #send_modal{
     position:absolute;
-    left: 45%;
+    left: 50%;
+    transform: translate(-50%);
     bottom: 15px;
     padding: 5px 10px;
-    background-color: #00b800;
+    color: var(--white);
+    background-color: #ffffff00;
+    border: 1px solid rgba(255, 255, 255, .5);
     border-radius: 5px;
+    border: none;
+}
+#send_modal:hover{
+    transition: .2s;
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: translate(-50%, -2px);
 }
 footer{
     position: relative;
@@ -1268,10 +1290,6 @@ header nav input {
 }
 #contact-question{
     margin-left: 40%;
-}
-#modal{
-    left: 30%;
-    top: 40%;
 }
 }
 @media screen and (min-width: 1366px) {
