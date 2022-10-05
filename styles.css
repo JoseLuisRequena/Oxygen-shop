@@ -811,6 +811,9 @@ header nav ul li a:hover {
     border: none;
     font-family: 'Open Sans';
 }
+#modal::backdrop{
+    background-color: rgba(0, 0, 0, .55);
+}
 #modal input{
     outline: none;
     margin: 5px 10px 5px 0;
@@ -823,7 +826,7 @@ header nav ul li a:hover {
     top: 15px;
     right: 15px;
     padding: 5px 10px;
-    border: 1px solid rgba(255, 255, 255, .5);
+    /*border: 1px solid rgba(255, 255, 255, .5);*/
     color: var(--white);
     border-radius: 5px;
     cursor: pointer;
